@@ -1,0 +1,26 @@
+<html>
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<table id="myTable">
+	<tr myid=1>
+		<td> hullo 1</td>
+		<td class="clickable"> hullo 1</td>
+	</tr>
+</table>
+<script type="text/javascript">
+(function($){
+	console.log("hello");
+	for(var i=2;i<8;i++){
+		$("#myTable").append('<tr myid='+i+'><td> hullo '+i+'</td><td class="clickable"> hullo '+i+'</td>	</tr>');
+	}
+	$(".clickable").each(function(){
+		$(this).click(function(){
+			console.log("hei",$(this).parent().attr("myid"));
+		});
+	});
+	}(jQuery))
+</script>
+</body>
+</html>
