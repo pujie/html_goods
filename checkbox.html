@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<style type='text/css'>
+			ul.gallery{
+				list-style: none
+			}
+			ul.gallery li{
+				display:inline;
+				padding: 5px;
+			}
+			ul.gallery li:nth-child(4n):after{
+				content:"\A";
+				white-space:pre;
+			}
+			.workspace{
+				text-align:center;
+			}
+		</style>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	</head>
+	<body>
+		<div class="workspace">
+			<input type="checkbox" myval="satu">Satu
+			<input type="checkbox" myval="dua">Dua
+			<input type="checkbox" myval="tiga">Tiga
+			<input type="checkbox" myval="empat">Empat
+			<input type="checkbox" myval="lima">Lima
+		</div>
+		<button id="clearbutton">Clear</button>
+		<button id="checkallbutton">Check All</button>
+		<button id="checkevenbutton">Check Even</button>
+		<button id="checkoddbutton">Check Odd</button>
+		<script type="text/javascript">
+			(function($){
+				console.log("test");
+				$("#clearbutton").click(function(){
+					$("input[type=checkbox]").prop("checked",false);
+				});
+				$("#checkallbutton").click(function(){
+					$("input[type=checkbox]").prop("checked",true);
+				});
+				$("#checkevenbutton").click(function(){
+					console.log("button checked");
+					$("input[myval=dua]").prop("checked",true);
+					$("input[myval=empat]").prop("checked",true);
+				});
+				$("#checkoddbutton").click(function(){
+					console.log("button checked");
+					$("input[myval=satu]").prop("checked",true);
+					$("input[myval=tiga]").prop("checked",true);
+					$("input[myval=lima]").prop("checked",true);
+				});
+			}(jQuery))
+		</script>
+	</body>
+</html>
