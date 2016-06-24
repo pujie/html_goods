@@ -3,37 +3,40 @@
     <title>Back To Top</title>
     <meta content="">
     <style>
-#back-to-top {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    z-index: 9999;
-    width: 32px;
-    height: 32px;
-    text-align: center;
-    line-height: 30px;
-    background: #f5f5f5;
-    color: #444;
-    cursor: pointer;
-    border: 0;
-    border-radius: 2px;
-    text-decoration: none;
-    transition: opacity 0.2s ease-out;
-    opacity: 0;
-}
-#back-to-top:hover {
-    background: #e9ebec;
-}
-#back-to-top.show {
-    opacity: 1;
-}
-#content {
-    height: 2000px;
-}
+		#back-to-top {
+			position: fixed;
+			bottom: 40px;
+			right: 40px;
+			z-index: 9999;
+			width: 32px;
+			height: 32px;
+			text-align: center;
+			line-height: 30px;
+			background: #f5f5f5;
+			color: #444;
+			cursor: pointer;
+			border: 0;
+			border-radius: 2px;
+			text-decoration: none;
+			transition: opacity 0.2s ease-out;
+			opacity: 0;
+			border: 2px red solid;
+		}
+		#back-to-top:hover {
+			background: #e9ebec;
+			color: red;
+		}
+		#back-to-top.show {
+			opacity: 1;
+		}
+		#content {
+			height: 2000px;
+		}
     </style>
   </head>
   <body>
 	  <div id="content">
+	  <h1>Scroll &darr;</h1>
 	  <p>
 		  Jika seseorang memasuki masjid sebelum didirikan shalat wajib, kemudian ia bertakbir untuk shalat rawatib (shalat sunnah) kemudian dikumandangkan iqamat. Apakah ia harus memutus shalatnya dan ikut shalat berjamaah dengan imam atau ia menyempurnakan shalatnya walaupun ketinggalan sebagian shalat berjamaah, apakah sama saja ia ketinggalan satu rakaat sempurna atau kurang atau lebih? Apakah ada rinciannya? Apa makna hadits “jika telah dikumandangan iqamat maka tidak ada shalat kecuali shalat wajib” (HR. Muslim)?
 		  <br />
@@ -123,7 +126,7 @@ Penulis : Wiwit Hardi P // Alumni Ma’had Al ‘Ilmi Yogyakarta
 </p>
 
 </div>
-<a href="#0" class="backtotop" id="back-to-top">Back To Top &uarr;</a>
+<a href="#0" class="backtotop" id="back-to-top" title="Kembali Ke Atas">&uarr;</a>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="index.js"></script>
   </body>
