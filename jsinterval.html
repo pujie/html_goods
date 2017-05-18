@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>JS Interval</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <meta content="">
+    <style></style>
+  </head>
+  <body>
+	<button id="toggler">Mulai</button>
+	<button id="togglerx">Stop</button>
+	<span id="display">0</span>
+  </body>
+  <script>
+  (function($){
+	  var myinterval = 0;
+	  playnumber = function(){
+		  return setInterval(function(){
+			  $("#display").html(parseInt($("#display").html())+1);
+			  },1000);
+		  }
+	  $("#toggler").click(function(){
+		  myinterval = playnumber();
+		  });
+	  $("#togglerx").click(function(){
+		  clearInterval(myinterval);
+		  console.log("stopped");
+		  });
+	  }(jQuery))
+  </script>
+</html>
