@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>Age</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	</head>
+	<body>
+		DT1 &nbsp;<span id="dt1">0</span><br />
+		DT2 &nbsp;<span id="dt2">0</span><br />
+		DT3 &nbsp;<span id="dt3">0</span><br />
+		Age &nbsp;<span id="age">0</span><br />
+		Hour &nbsp;<span id="hour">0</span><br />
+		Minute &nbsp;<span id="minute">0</span><br />
+		Second &nbsp;<span id="second">0</span><br />
+		<script type="text/javascript">
+			(function($){
+				addzero = function(num){
+					for(c=num.toString().length;c<2;c++){
+						num = '0'+num.toString();
+					}
+					return num.toString();
+				}
+				date1 = new Date(2017,5,20,08,30,00);
+				date2 = new Date(2017,6,19,18,30,00);
+				date3 = new Date();
+				console.log(date1.toString());
+				console.log(date3.toString());
+				age = date3 - date1;
+				$("#age").html(age/(60*60*1000));
+				$("#dt1").html(date1.toString());
+				$("#dt2").html(date2.toString());
+				$("#dt3").html(date3.toString());
+				setInterval(function(){
+					date4 = new Date();
+					age = date4 - date1;
+					second = Math.floor(age/(1000));
+					_second = second%60;
+					
+					minute = Math.floor(age/(60*1000));
+					_minute = minute%60;
+					hour = Math.floor(age/(60*60*1000));
+					_hour = hour%60;
+					$("#age").html(hour + ' ' +minute + ' ' + second);
+					$("#hour").html(addzero(_hour));
+					$("#minute").html(addzero(_minute));
+					$("#second").html(addzero(_second));
+				},1000);
+			}(jQuery))
+		</script>
+	</body>
+</html> 
